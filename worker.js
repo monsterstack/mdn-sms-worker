@@ -5,8 +5,10 @@ const Worker = require('core-worker').Worker;
 
 const main = () => {
   console.log('Starting Sms Worker');
-  let worker = new Worker("SmsWorker", {
-    queue: "email",
+  let announcement = require('./announcement.json');
+
+  let worker = new Worker("SmsWorker", announcement, {
+    queue: "sms",
     redis: {
       host: config.redis.host,
       port: config.redis.port
@@ -17,8 +19,8 @@ const main = () => {
   });
 
   worker.init().then(() => {
-    // Query
-    worker.query();
+    // Announce
+    worker.announce();
 
     worker.listen().then(() => {
       worker.on('message', (workLoad) => {
