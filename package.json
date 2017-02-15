@@ -9,7 +9,8 @@
   "dependencies": {
     "config": "^1.25.1",
     "core-worker": "https://github.com/monsterstack/core-worker#development",
-    "discovery-proxy": "https://github.com/monsterstack/discovery-proxy#development"
+    "discovery-proxy": "https://github.com/monsterstack/discovery-proxy#development",
+    "twilio": "^2.11.1"
   },
   "author": "",
   "license": "ISC"

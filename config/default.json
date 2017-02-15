@@ -6,5 +6,11 @@
   "discovery": {
     "host": "cdsp.digitalfunk.io",
     "port": 7616
+  },
+  "sms": {
+    "twilio": {
+      "authToken": "REPLACE_WITH_SECRET_VALUE",
+      "accountSID": "REPLACE_WITH_SECRET_VALUE"
+    }
   }
 }
