@@ -2,8 +2,14 @@
 const config = require('config');
 const Worker = require('core-worker').Worker;
 
+const optimist = require('optimist');
+const _ = require('lodash');
 
 const main = () => {
+  if(optimist.argv.overrides) {
+    let overrides = require(optimist.argv.overrides);
+    _.merge(config, overrides);
+  }
   console.log('Starting Sms Worker');
   let announcement = require('./announcement.json');
 
