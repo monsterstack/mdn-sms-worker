@@ -1,7 +1,6 @@
 'use strict';
 const config = require('config');
 const Worker = require('core-worker').Worker;
-
 const optimist = require('optimist');
 const _ = require('lodash');
 
